@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3652AFE2E1E679D88CC4EC8A /* Pods_MiseEnPlaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82ACAC99700B85830794D4D3 /* Pods_MiseEnPlaceTests.framework */; };
 		6CFDAD07DA9F44A6B2955A32 /* Pods_MiseEnPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09388948EAE5FDB8914AD8B2 /* Pods_MiseEnPlace.framework */; };
+		B31F154525CD2318004A528B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F154425CD2317004A528B /* HomeView.swift */; };
+		B31F154A25CD243E004A528B /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F154925CD243E004A528B /* RecipesView.swift */; };
+		B31F155725CD2564004A528B /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F155625CD2564004A528B /* ToDoView.swift */; };
 		B33AC87025CB217E005B9C3F /* MiseEnPlaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33AC86F25CB217E005B9C3F /* MiseEnPlaceApp.swift */; };
 		B33AC87225CB217E005B9C3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33AC87125CB217E005B9C3F /* ContentView.swift */; };
 		B33AC87425CB2181005B9C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33AC87325CB2181005B9C3F /* Assets.xcassets */; };
@@ -43,6 +46,9 @@
 		7F0B3CDD03AAEB6363B12653 /* Pods-MiseEnPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiseEnPlace.debug.xcconfig"; path = "Target Support Files/Pods-MiseEnPlace/Pods-MiseEnPlace.debug.xcconfig"; sourceTree = "<group>"; };
 		82ACAC99700B85830794D4D3 /* Pods_MiseEnPlaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiseEnPlaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD4A9F52184DA77680064DCD /* Pods-MiseEnPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiseEnPlace.release.xcconfig"; path = "Target Support Files/Pods-MiseEnPlace/Pods-MiseEnPlace.release.xcconfig"; sourceTree = "<group>"; };
+		B31F154425CD2317004A528B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B31F154925CD243E004A528B /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
+		B31F155625CD2564004A528B /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		B33AC86C25CB217E005B9C3F /* MiseEnPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiseEnPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33AC86F25CB217E005B9C3F /* MiseEnPlaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiseEnPlaceApp.swift; sourceTree = "<group>"; };
 		B33AC87125CB217E005B9C3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,7 +105,6 @@
 				0FBBAC7C4CAD550A6700C988 /* Pods-MiseEnPlaceTests.debug.xcconfig */,
 				CF049C78925B028D3E1037FF /* Pods-MiseEnPlaceTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -141,6 +146,9 @@
 				B33AC89D25CB2642005B9C3F /* GoogleService-Info.plist */,
 				B33AC86F25CB217E005B9C3F /* MiseEnPlaceApp.swift */,
 				B33AC87125CB217E005B9C3F /* ContentView.swift */,
+				B31F154425CD2317004A528B /* HomeView.swift */,
+				B31F155625CD2564004A528B /* ToDoView.swift */,
+				B31F154925CD243E004A528B /* RecipesView.swift */,
 				B33AC87325CB2181005B9C3F /* Assets.xcassets */,
 				B33AC87825CB2181005B9C3F /* Info.plist */,
 				B33AC87525CB2181005B9C3F /* Preview Content */,
@@ -412,8 +420,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31F154525CD2318004A528B /* HomeView.swift in Sources */,
 				B33AC87225CB217E005B9C3F /* ContentView.swift in Sources */,
+				B31F154A25CD243E004A528B /* RecipesView.swift in Sources */,
 				B33AC87025CB217E005B9C3F /* MiseEnPlaceApp.swift in Sources */,
+				B31F155725CD2564004A528B /* ToDoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
