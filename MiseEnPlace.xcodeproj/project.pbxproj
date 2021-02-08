@@ -20,6 +20,7 @@
 		B33AC89E25CB2642005B9C3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B33AC89D25CB2642005B9C3F /* GoogleService-Info.plist */; };
 		B3907AEC25D16013009C3A5E /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3907AEB25D16013009C3A5E /* PostView.swift */; };
 		B3907AF125D16B31009C3A5E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3907AF025D16B31009C3A5E /* RegisterView.swift */; };
+		B3907B0125D16EFF009C3A5E /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3907B0025D16EFF009C3A5E /* RoundedRectangleView.swift */; };
 		D8633F548E9699CD25EDCE15 /* Pods_MiseEnPlace_MiseEnPlaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D893BF18CA505BD1BF0C4E /* Pods_MiseEnPlace_MiseEnPlaceUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		B33AC89D25CB2642005B9C3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B3907AEB25D16013009C3A5E /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		B3907AF025D16B31009C3A5E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		B3907B0025D16EFF009C3A5E /* RoundedRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedRectangleView.swift; sourceTree = "<group>"; };
 		C25C862A5B814C81FA13B698 /* Pods-MiseEnPlace-MiseEnPlaceUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiseEnPlace-MiseEnPlaceUITests.debug.xcconfig"; path = "Target Support Files/Pods-MiseEnPlace-MiseEnPlaceUITests/Pods-MiseEnPlace-MiseEnPlaceUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CF049C78925B028D3E1037FF /* Pods-MiseEnPlaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiseEnPlaceTests.release.xcconfig"; path = "Target Support Files/Pods-MiseEnPlaceTests/Pods-MiseEnPlaceTests.release.xcconfig"; sourceTree = "<group>"; };
 		F5D893BF18CA505BD1BF0C4E /* Pods_MiseEnPlace_MiseEnPlaceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MiseEnPlace_MiseEnPlaceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +151,7 @@
 				B33AC86F25CB217E005B9C3F /* MiseEnPlaceApp.swift */,
 				B3907AF025D16B31009C3A5E /* RegisterView.swift */,
 				B33AC87125CB217E005B9C3F /* ContentView.swift */,
+				B3907B0025D16EFF009C3A5E /* RoundedRectangleView.swift */,
 				B31F154425CD2317004A528B /* HomeView.swift */,
 				B31F154925CD243E004A528B /* RecipesView.swift */,
 				B3907AEB25D16013009C3A5E /* PostView.swift */,
@@ -424,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B31F154525CD2318004A528B /* HomeView.swift in Sources */,
+				B3907B0125D16EFF009C3A5E /* RoundedRectangleView.swift in Sources */,
 				B33AC87225CB217E005B9C3F /* ContentView.swift in Sources */,
 				B31F154A25CD243E004A528B /* RecipesView.swift in Sources */,
 				B3907AF125D16B31009C3A5E /* RegisterView.swift in Sources */,

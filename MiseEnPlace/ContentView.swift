@@ -16,7 +16,7 @@ struct ContentView: View {
             Spacer()
             Image("miseenplacelogo")
             Spacer()
-            roundedRectangleView().overlay(HStack{
+            RoundedRectangleView().overlay(HStack{
                 Image(systemName: "envelope")
                     .foregroundColor(.gray)
                 TextField("Email", text: $email)
@@ -24,7 +24,7 @@ struct ContentView: View {
             .padding(.horizontal, 20)
             .cornerRadius(10))
             
-            roundedRectangleView().overlay(HStack{
+            RoundedRectangleView().overlay(HStack{
                 Image(systemName: "lock")
                     .foregroundColor(.gray)
                 SecureField("Password", text: $password)
@@ -48,7 +48,7 @@ struct ContentView: View {
                 Button(action: {}) {
                     Text("Forgot password?")
                 }.padding(EdgeInsets(top: 10, leading: 20, bottom: 20, trailing: 20))
-            }
+            }.padding(.bottom, 40)
            
         
         }
@@ -63,12 +63,3 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct roundedRectangleView: View {
-    var body: some View {
-        RoundedRectangle(cornerRadius: 20)
-            .stroke(Color.gray)
-            .frame(width: 300, height: 50)
-            .foregroundColor(.white)
-            
-    }
-}

@@ -17,7 +17,7 @@ struct MiseEnPlaceApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            ContentView()
         }
     }
 }
