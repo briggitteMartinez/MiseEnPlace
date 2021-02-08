@@ -31,7 +31,25 @@ struct ContentView: View {
             }.frame(height: 60)
             .padding(.horizontal, 20)
             .cornerRadius(10))
+            .padding(10)
+        
+            Button(action: {}) {
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.gray)
+                    .frame(width: 300, height: 50)
+                    .background(Color(red: 0.00, green: 0.38, blue: 0.40))
+                    .overlay(Text("Login").accentColor(.white))
+            }
             
+            HStack {
+                Button(action: {}) {
+                    Text("Sign Up")
+                }.padding(EdgeInsets(top: 10, leading: 10, bottom: 20, trailing: 30))
+                Button(action: {}) {
+                    Text("Forgot password?")
+                }.padding(EdgeInsets(top: 10, leading: 20, bottom: 20, trailing: 20))
+            }
+           
         
         }
         
@@ -51,8 +69,6 @@ struct roundedRectangleView: View {
             .stroke(Color.gray)
             .frame(width: 300, height: 50)
             .foregroundColor(.white)
-            .overlay(HStack{
-                
-            })
+            
     }
 }
