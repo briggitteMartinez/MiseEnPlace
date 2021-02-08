@@ -9,7 +9,14 @@ import SwiftUI
 
 struct PostView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Text("Recipe Name Here").font(.title2)
+                Spacer()
+                Image(systemName: "ellipsis").font(.headline)
+            }
+            Image("rotfrukter").resizable().scaledToFit()
+        }
     }
 }
 
