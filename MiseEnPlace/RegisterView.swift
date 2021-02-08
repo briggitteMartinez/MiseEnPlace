@@ -8,8 +8,50 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @State var remail = ""
+    @State var rpassword = ""
+    @State var rpassword2 = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Spacer()
+            Image("miseenplacelogo").resizable().scaledToFit().frame(width: 200, height: 200, alignment: .center)
+            Spacer()
+            RoundedRectangleView().overlay(HStack{
+                Image(systemName: "envelope")
+                    .foregroundColor(.gray)
+                TextField("Email", text: $remail)
+            }.frame(height: 60)
+            .padding(.horizontal, 20)
+            .cornerRadius(10))
+            
+            RoundedRectangleView().overlay(HStack{
+                Image(systemName: "lock")
+                    .foregroundColor(.gray)
+                SecureField("Password", text: $rpassword)
+            }.frame(height: 60)
+            .padding(.horizontal, 20)
+            .cornerRadius(10))
+            .padding(10)
+            
+            RoundedRectangleView().overlay(HStack{
+                Image(systemName: "lock")
+                    .foregroundColor(.gray)
+                SecureField("Confirm password", text: $rpassword2)
+            }.frame(height: 60)
+            .padding(.horizontal, 20)
+            .cornerRadius(10))
+            .padding(10)
+            
+            Button(action: {}) {
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
+                    .frame(width: 180, height: 50)
+                    .overlay(Text("Register").accentColor(.white))
+            }.padding(.top, 20)
+            Spacer()
+            Spacer()
+        }
+        
     }
 }
 

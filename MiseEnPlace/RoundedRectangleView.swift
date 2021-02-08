@@ -16,5 +16,6 @@ struct RoundedRectangleView: View {
             .foregroundColor(.white)
             
     }
+
 }
 
