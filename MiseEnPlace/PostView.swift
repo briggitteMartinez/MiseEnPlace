@@ -13,7 +13,7 @@ struct PostView: View {
             HStack {
                 Text("Recipe Name Here").font(.title2)
                 Spacer()
-                Image(systemName: "ellipsis").font(.headline)
+                Image(systemName: "ellipsis").font(.headline).padding(.horizontal,20)
             }
             Image("rotfrukter").resizable().scaledToFit()
         }
