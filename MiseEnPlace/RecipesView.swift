@@ -10,20 +10,18 @@ import SwiftUI
 struct RecipesView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
-                    Text("Placeceholder")
-                    Text("Placeceholder")
-                    Text("Placeceholder")
-                    Text("Placeceholder")
-                }).navigationBarTitle("Recipes")
-                .navigationBarTitleDisplayMode(.inline)
+            PostView()
+            PostView()
+        }).navigationBarTitle("Recipes")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-                    RecipesView()
-                }
-
+            RecipesView()
+        }
+        
     }
 }
