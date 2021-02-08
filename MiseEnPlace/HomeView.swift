@@ -25,7 +25,7 @@ struct HomeView: View {
                        Image(systemName: "doc.plaintext.fill")
                        Text("ToDo")
                }
-           }
+           }.accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
     }
 }
 
