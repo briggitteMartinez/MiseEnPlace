@@ -10,22 +10,24 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         TabView {
-               Text("Home Screen")
-                   .tabItem {
-                       Image(systemName: "house.fill")
-                       Text("Home")
-               }
-               Text("Recipe Screen")
-                   .tabItem {
-                       Image(systemName: "book.fill")
-                       Text("Recipes")
-               }
-               Text("To Do Screen")
-                   .tabItem {
-                       Image(systemName: "doc.plaintext.fill")
-                       Text("ToDo")
-               }
-           }.accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
+            Text("Home Screen")
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+            NavigationView{
+                RecipesView()
+            }
+            .tabItem {
+                Image(systemName: "book.fill")
+                Text("Recipes")
+            }
+            Text("To Do Screen")
+                .tabItem {
+                    Image(systemName: "doc.plaintext.fill")
+                    Text("ToDo")
+                }
+        }.accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
     }
 }
 

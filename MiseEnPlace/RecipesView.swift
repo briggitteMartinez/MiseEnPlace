@@ -12,6 +12,7 @@ struct RecipesView: View {
         ScrollView(.vertical, showsIndicators: false, content: {
             PostView()
             PostView()
+            PostView()
         }).navigationBarTitle("Recipes")
         .navigationBarTitleDisplayMode(.inline)
     }
