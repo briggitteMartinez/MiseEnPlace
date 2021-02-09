@@ -11,7 +11,7 @@ import Firebase
 struct RegisterView: View {
     @State var remail = ""
     @State var rpassword = ""
-    @State var rpassword2 = ""
+    //@State var rpassword2 = ""
     var body: some View {
         VStack{
             Spacer()
@@ -34,27 +34,28 @@ struct RegisterView: View {
             .cornerRadius(10))
             .padding(10)
             
-            RoundedRectangleView().overlay(HStack{
-                Image(systemName: "lock")
-                    .foregroundColor(.gray)
-                SecureField("Confirm password", text: $rpassword2)
-            }.frame(height: 60)
-            .padding(.horizontal, 20)
-            .cornerRadius(10))
-            .padding(10)
+//            RoundedRectangleView().overlay(HStack{
+//                Image(systemName: "lock")
+//                    .foregroundColor(.gray)
+//                SecureField("Confirm password", text: $rpassword2)
+//            }.frame(height: 60)
+//            .padding(.horizontal, 20)
+//            .cornerRadius(10))
+//            .padding(10)
             
             Button(action: {
-                if rpassword == rpassword2{
+                //if rpassword == rpassword2{
                     Auth.auth().createUser(withEmail: remail, password: rpassword) { authResult, error in
                         if let e = error{
                             print(e)
                         }else{
                             print("registered user")
+                            // code here to navigate to Homeview
                         }
                         
                     }
                     
-                }
+                //}
             }) {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
