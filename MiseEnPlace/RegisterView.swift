@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct RegisterView: View {
     @State var remail = ""
@@ -42,7 +43,19 @@ struct RegisterView: View {
             .cornerRadius(10))
             .padding(10)
             
-            Button(action: {}) {
+            Button(action: {
+                if rpassword == rpassword2{
+                    Auth.auth().createUser(withEmail: remail, password: rpassword) { authResult, error in
+                        if let e = error{
+                            print(e)
+                        }else{
+                            print("registered user")
+                        }
+                        
+                    }
+                    
+                }
+            }) {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
                     .frame(width: 180, height: 50)
