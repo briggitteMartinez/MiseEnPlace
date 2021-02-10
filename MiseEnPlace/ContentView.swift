@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     @State var email = ""
     @State var password = ""
+    @State var goTo = false
     
     var body: some View {
         VStack{
@@ -34,7 +36,19 @@ struct ContentView: View {
             .padding(10)
             
             Button(action: {
-                print("Login succes")
+                Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
+                    if let e = error{
+                        print(e)
+                    }else{
+                        print("Login Succes")
+                        goTo.toggle()
+                        //navigate to homeview
+                        //
+                    }
+                    
+                }
+                    
+                    // ...
             }) { RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
                     .frame(width: 180, height: 50)
@@ -53,8 +67,9 @@ struct ContentView: View {
             }.padding(.bottom, 40)
             
             
-        }
-        
+        }.fullScreenCover(isPresented: $goTo, content: {
+            HomeView()
+        })
     }
     
 }
