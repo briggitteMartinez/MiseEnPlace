@@ -47,7 +47,7 @@ struct RegisterView: View {
                 //if rpassword == rpassword2{
                     Auth.auth().createUser(withEmail: remail, password: rpassword) { authResult, error in
                         if let e = error{
-                            print(e)
+                            print(e.localizedDescription)
                         }else{
                             print("registered user")
                             // code here to navigate to Homeview
