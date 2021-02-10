@@ -15,66 +15,68 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView{
-        VStack{
-            Spacer()
-            Image("miseenplacelogo")
-            Spacer()
-            RoundedRectangleView().overlay(HStack{
-                Image(systemName: "envelope")
-                    .foregroundColor(.gray)
-                TextField("Email", text: $email)
-            }.frame(height: 60)
-            .padding(.horizontal, 20)
-            .cornerRadius(10))
-            
-            RoundedRectangleView().overlay(HStack{
-                Image(systemName: "lock")
-                    .foregroundColor(.gray)
-                SecureField("Password", text: $password)
-            }.frame(height: 60)
-            .padding(.horizontal, 20)
-            .cornerRadius(10))
-            .padding(10)
-            
-            Button(action: {
-                Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
-                    if let e = error{
-                        print(e)
-                    }else{
-                        print("Login Succes")
-                        goToHome.toggle()
-                        //navigate to homeview
-                        //
+            VStack{
+                Spacer()
+                Image("miseenplacelogo")
+                Spacer()
+                RoundedRectangleView().overlay(HStack{
+                    Image(systemName: "envelope")
+                        .foregroundColor(.gray)
+                    TextField("Email", text: $email)
+                }.frame(height: 60)
+                .padding(.horizontal, 20)
+                .cornerRadius(10))
+                
+                RoundedRectangleView().overlay(HStack{
+                    Image(systemName: "lock")
+                        .foregroundColor(.gray)
+                    SecureField("Password", text: $password)
+                }.frame(height: 60)
+                .padding(.horizontal, 20)
+                .cornerRadius(10))
+                .padding(10)
+                
+                Button(action: {
+                    Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
+                        if let e = error{
+                            print(e)
+                        }else{
+                            print("Login Succes")
+                            goToHome.toggle()
+                            //navigate to homeview
+                            //
+                        }
+                        
                     }
                     
-                }
-                    
                     // ...
-            }) { RoundedRectangle(cornerRadius: 20)
+                }) { RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
                     .frame(width: 180, height: 50)
                     .overlay(Text("Login").accentColor(.white))
-            }
-            
-            HStack {
-                NavigationLink(
-                    destination: RegisterView(),
-                    label: {
-                        Text("Sign up /").accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
-                    })
-            
-               
-                Button(action: {}) {
-                    Text("Forgot password?")
-                        .accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
-                }.padding(EdgeInsets(top: 10, leading: 0, bottom: 20, trailing: 0))
-            }.padding(.bottom, 40)
-            
-            
-        }.fullScreenCover(isPresented: $goToHome, content: {
-            HomeView()
-        })
-    }}
+                }
+                
+                HStack {
+                    NavigationLink(
+                        destination: RegisterView(),
+                        label: {
+                            Text("Sign up /").accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
+                        }).padding(EdgeInsets(top: 10, leading: 0, bottom: 20, trailing: 0))
+                    
+                    
+                    Button(action: {}) {
+                        Text("Forgot password?")
+                            .accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
+                    }.padding(EdgeInsets(top: 10, leading: 0, bottom: 20, trailing: 0))
+                }.padding(.bottom, 40)
+                
+                
+            }.fullScreenCover(isPresented: $goToHome, content: {
+                HomeView()
+            })
+        }
+        
+    }
     
 }
 

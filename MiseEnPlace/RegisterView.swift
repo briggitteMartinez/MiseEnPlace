@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 
 struct RegisterView: View {
+    @State var goToLogin = false
     @State var remail = ""
     @State var rpassword = ""
     //@State var rpassword2 = ""
@@ -50,6 +51,7 @@ struct RegisterView: View {
                             print(e.localizedDescription)
                         }else{
                             print("registered user")
+                            goToLogin.toggle()
                             // code here to navigate to Homeview
                         }
                         
@@ -60,11 +62,13 @@ struct RegisterView: View {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
                     .frame(width: 180, height: 50)
-                    .overlay(Text("Register").accentColor(.white))
+                    .overlay(Text("Sign up").accentColor(.white))
             }.padding(.top, 20)
             Spacer()
             Spacer()
-        }
+        }.fullScreenCover(isPresented: $goToLogin, content: {
+            ContentView()
+        })
         
     }
 }
