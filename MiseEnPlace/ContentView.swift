@@ -11,9 +11,10 @@ import Firebase
 struct ContentView: View {
     @State var email = ""
     @State var password = ""
-    @State var goTo = false
+    @State var goToHome = false
     
     var body: some View {
+        NavigationView{
         VStack{
             Spacer()
             Image("miseenplacelogo")
@@ -41,7 +42,7 @@ struct ContentView: View {
                         print(e)
                     }else{
                         print("Login Succes")
-                        goTo.toggle()
+                        goToHome.toggle()
                         //navigate to homeview
                         //
                     }
@@ -56,10 +57,13 @@ struct ContentView: View {
             }
             
             HStack {
-                Button(action: {}) {
-                    Text("Sign up /")
-                        .accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
-                }.padding(EdgeInsets(top: 10, leading: 6, bottom: 20, trailing: 0))
+                NavigationLink(
+                    destination: RegisterView(),
+                    label: {
+                        Text("Sign up /").accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
+                    })
+            
+               
                 Button(action: {}) {
                     Text("Forgot password?")
                         .accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
@@ -67,10 +71,10 @@ struct ContentView: View {
             }.padding(.bottom, 40)
             
             
-        }.fullScreenCover(isPresented: $goTo, content: {
+        }.fullScreenCover(isPresented: $goToHome, content: {
             HomeView()
         })
-    }
+    }}
     
 }
 
