@@ -53,7 +53,7 @@ struct ContentView: View {
                 }) { RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
                     .frame(width: 180, height: 50)
-                    .overlay(Text("Login").accentColor(.white))
+                    .overlay(Text("Sign in").accentColor(.white))
                 }
                 
                 HStack {

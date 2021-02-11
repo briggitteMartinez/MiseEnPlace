@@ -15,6 +15,13 @@ struct RecipesView: View {
             PostView()
         }).navigationBarTitle("Recipes")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarItems(trailing:
+                                Button(action: {
+                                    print("Add button pressed...")
+                                }) {
+                                    Image(systemName: "plus")
+                                }
+        )
     }
 }
 
