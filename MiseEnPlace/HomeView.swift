@@ -27,7 +27,7 @@ struct HomeView: View {
                     Image(systemName: "doc.plaintext.fill")
                     Text("ToDo")
                 }
-            Home2View()
+            SignOutView()
                 .tabItem {
                     Image(systemName: "square.and.arrow.up.fill")
                     Text("Sign Out")
