@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         TabView {
-            Text("Home Screen")
+            Home2View()
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Home")
@@ -26,6 +26,11 @@ struct HomeView: View {
                 .tabItem {
                     Image(systemName: "doc.plaintext.fill")
                     Text("ToDo")
+                }
+            Home2View()
+                .tabItem {
+                    Image(systemName: "square.and.arrow.up.fill")
+                    Text("Sign Out")
                 }
         }.accentColor(Color(red: 0.00, green: 0.38, blue: 0.40))
     }

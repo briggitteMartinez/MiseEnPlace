@@ -11,7 +11,7 @@ import Firebase
 struct Home2View: View {
     var body: some View {
         VStack{
-            Spacer()
+            Image("miseenplacelogo").resizable().scaledToFit().frame(width: 200, height: 200, alignment: .center).padding(.top, 20)
             Spacer()
             HStack {
                 VStack {
@@ -20,7 +20,7 @@ struct Home2View: View {
                         .scaledToFit()
                         .frame(width: 130, height: 130, alignment: .center)
                         .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
-                    Text("Recipes").font(.title).padding(.all, -15)
+                    Text("Recipes").accentColor(Color(red: 0.00, green: 0.38, blue: 0.40)).font(.title).padding(.all, -15)
                 }
                 Spacer()
                 
@@ -30,31 +30,34 @@ struct Home2View: View {
                         .scaledToFit()
                         .frame(width: 130, height: 130, alignment: .center)
                         .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
-                    Text("To Do").font(.title).padding(.all, -12)
+                    Text("To Do").accentColor(Color(red: 0.00, green: 0.38, blue: 0.40)).font(.title).padding(.all, -12)
                 }
             }.padding(35)
             Spacer()
-            Button(action: {
-                let firebaseAuth = Auth.auth()
-            do {
-              try firebaseAuth.signOut()
-            } catch let signOutError as NSError {
-              print ("Error signing out: %@", signOutError)
-            }
-                
-            }) {
-                VStack {
+            Spacer()
+                       Button(action: {
+                           let firebaseAuth = Auth.auth()
+                       do {
+                         try firebaseAuth.signOut()
+                        
+                       } catch let signOutError as NSError {
+                         print ("Error signing out: %@", signOutError)
+                       }
+                           
+                       }) {
+                           VStack {
 
-                    Image(systemName: "square.and.arrow.up")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 130, height: 130, alignment: .center)
-                        .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
-                    Text("Sign Out").font(.title).padding(.all, -5)
-                }
-            }.padding(.bottom, 30)
-            
-Spacer()
+                               Image(systemName: "square.and.arrow.up")
+                                   .resizable()
+                                   .scaledToFit()
+                                   .frame(width: 50, height: 100, alignment: .center)
+                                   .foregroundColor(Color(red: 0.00, green: 0.38, blue: 0.40))
+                               Text("Sign Out").accentColor(Color(red: 0.00, green: 0.38, blue: 0.40)).font(.title).padding(.all, -5)
+                           }
+                       }.padding(.bottom, 30)
+                       
+           Spacer()
+
         }
     }
 }
