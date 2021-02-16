@@ -9,12 +9,8 @@ import SwiftUI
 
 struct PostView: View {
     var body: some View {
-        VStack {
-            HStack {
-                Text("Recipe Name Here").font(.title2)
-                Spacer()
-                Image(systemName: "ellipsis").font(.headline)
-            }.padding(.horizontal,6)
+        VStack(alignment: .leading){
+            Text("Recipe Name Here").font(.title2)
             Image("rotfrukter").resizable().scaledToFit()
         }
     }
