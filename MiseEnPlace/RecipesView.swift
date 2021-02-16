@@ -13,9 +13,12 @@ struct RecipesView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
-            ForEach(posts.dataArray, id:\.self){ post in
-                PostView(post: post)
+            LazyVStack{
+                ForEach(posts.dataArray, id:\.self){ post in
+                    PostView(post: post)
+                }
             }
+
         }).navigationBarTitle("Recipes")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:
