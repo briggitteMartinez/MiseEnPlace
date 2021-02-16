@@ -11,6 +11,7 @@
 		6CFDAD07DA9F44A6B2955A32 /* Pods_MiseEnPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09388948EAE5FDB8914AD8B2 /* Pods_MiseEnPlace.framework */; };
 		B30B2B5925DC0A8100CEE080 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B2B5825DC0A8100CEE080 /* PostModel.swift */; };
 		B30B2B5E25DC10A600CEE080 /* PostArrayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B2B5D25DC10A600CEE080 /* PostArrayObject.swift */; };
+		B30B2B6325DC18F800CEE080 /* AddRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B2B6225DC18F800CEE080 /* AddRecipesView.swift */; };
 		B31F154525CD2318004A528B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F154425CD2317004A528B /* HomeView.swift */; };
 		B31F154A25CD243E004A528B /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F154925CD243E004A528B /* RecipesView.swift */; };
 		B33AC87025CB217E005B9C3F /* MiseEnPlaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33AC86F25CB217E005B9C3F /* MiseEnPlaceApp.swift */; };
@@ -54,6 +55,7 @@
 		AD4A9F52184DA77680064DCD /* Pods-MiseEnPlace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MiseEnPlace.release.xcconfig"; path = "Target Support Files/Pods-MiseEnPlace/Pods-MiseEnPlace.release.xcconfig"; sourceTree = "<group>"; };
 		B30B2B5825DC0A8100CEE080 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		B30B2B5D25DC10A600CEE080 /* PostArrayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArrayObject.swift; sourceTree = "<group>"; };
+		B30B2B6225DC18F800CEE080 /* AddRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipesView.swift; sourceTree = "<group>"; };
 		B31F154425CD2317004A528B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B31F154925CD243E004A528B /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
 		B33AC86C25CB217E005B9C3F /* MiseEnPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiseEnPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 				B3E0852625D5803A0004772C /* Home2View.swift */,
 				B3E0854B25D5A1030004772C /* SignOutView.swift */,
 				B31F154925CD243E004A528B /* RecipesView.swift */,
+				B30B2B6225DC18F800CEE080 /* AddRecipesView.swift */,
 				B3907AEB25D16013009C3A5E /* PostView.swift */,
 				B30B2B5D25DC10A600CEE080 /* PostArrayObject.swift */,
 				B30B2B5825DC0A8100CEE080 /* PostModel.swift */,
@@ -444,6 +447,7 @@
 				B3907B0125D16EFF009C3A5E /* RoundedRectangleView.swift in Sources */,
 				B33AC87225CB217E005B9C3F /* ContentView.swift in Sources */,
 				B30B2B5E25DC10A600CEE080 /* PostArrayObject.swift in Sources */,
+				B30B2B6325DC18F800CEE080 /* AddRecipesView.swift in Sources */,
 				B31F154A25CD243E004A528B /* RecipesView.swift in Sources */,
 				B3907AF125D16B31009C3A5E /* RegisterView.swift in Sources */,
 				B3907AEC25D16013009C3A5E /* PostView.swift in Sources */,
