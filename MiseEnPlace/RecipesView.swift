@@ -18,15 +18,15 @@ struct RecipesView: View {
                     PostView(post: post)
                 }
             }
-
+            
         }).navigationBarTitle("Recipes")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:
-                                Button(action: {
-                                    print("Add button pressed...")
-                                }) {
-                                    Image(systemName: "plus")
-                                }
+                                NavigationLink(
+                                    destination: AddRecipesView(),
+                                    label: {
+                                        Image(systemName: "plus")
+                                    })
         )
     }
 }

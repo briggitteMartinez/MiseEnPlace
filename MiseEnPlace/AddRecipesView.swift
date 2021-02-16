@@ -19,7 +19,7 @@ struct AddRecipesView: View {
                 Divider()
                 TextField("Title of recipe here", text: $title).padding(.all, 6)
                 Divider()
-                Image(systemName: "photo").resizable().scaledToFit().accentColor(.gray)
+                Image(systemName: "photo").resizable().scaledToFit()
                 Divider()
                 TextEditor(text: $inputText)
                 Spacer()
