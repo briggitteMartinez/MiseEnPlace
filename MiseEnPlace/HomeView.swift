@@ -16,7 +16,7 @@ struct HomeView: View {
                     Text("Home")
                 }
             NavigationView{
-                RecipesView()
+                RecipesView(posts: PostArrayObject())
             }
             .tabItem {
                 Image(systemName: "book.fill")

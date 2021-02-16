@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct RecipesView: View {
+    
+    @ObservedObject var posts: PostArrayObject
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
-            //PostView()
+            ForEach(posts.dataArray, id:\.self){ post in
+                PostView(post: post)
+            }
         }).navigationBarTitle("Recipes")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:
@@ -26,7 +31,7 @@ struct RecipesView: View {
 struct RecipesView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            RecipesView()
+            RecipesView(posts: PostArrayObject())
         }
         
     }
