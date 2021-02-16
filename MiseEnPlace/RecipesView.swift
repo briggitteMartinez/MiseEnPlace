@@ -10,9 +10,7 @@ import SwiftUI
 struct RecipesView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
-            PostView()
-            PostView()
-            PostView()
+            //PostView()
         }).navigationBarTitle("Recipes")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:
