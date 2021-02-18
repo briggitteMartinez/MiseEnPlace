@@ -29,8 +29,16 @@ struct AddRecipesView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        sourceType = UIImagePickerController.SourceType.camera
-                        showImagePicker.toggle()
+                        if UIImagePickerController.isSourceTypeAvailable(.camera){
+                            sourceType = UIImagePickerController.SourceType.camera
+                            showImagePicker.toggle()
+                        } else {
+                          print("Device has no camera, please choose picture from photo library")
+                            sourceType = UIImagePickerController.SourceType.photoLibrary
+                            showImagePicker.toggle()
+                        }
+                        
+                        
                     }) {
                         Image(systemName: "camera")
                             .resizable()
