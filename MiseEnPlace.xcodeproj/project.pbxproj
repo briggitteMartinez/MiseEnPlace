@@ -14,6 +14,7 @@
 		B30B2B6325DC18F800CEE080 /* AddRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30B2B6225DC18F800CEE080 /* AddRecipesView.swift */; };
 		B31F154525CD2318004A528B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F154425CD2317004A528B /* HomeView.swift */; };
 		B31F154A25CD243E004A528B /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F154925CD243E004A528B /* RecipesView.swift */; };
+		B337B4B425DF043300595093 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337B4B325DF043200595093 /* ImagePicker.swift */; };
 		B33AC87025CB217E005B9C3F /* MiseEnPlaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33AC86F25CB217E005B9C3F /* MiseEnPlaceApp.swift */; };
 		B33AC87225CB217E005B9C3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33AC87125CB217E005B9C3F /* ContentView.swift */; };
 		B33AC87425CB2181005B9C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33AC87325CB2181005B9C3F /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		B30B2B6225DC18F800CEE080 /* AddRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipesView.swift; sourceTree = "<group>"; };
 		B31F154425CD2317004A528B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B31F154925CD243E004A528B /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
+		B337B4B325DF043200595093 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		B33AC86C25CB217E005B9C3F /* MiseEnPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiseEnPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33AC86F25CB217E005B9C3F /* MiseEnPlaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiseEnPlaceApp.swift; sourceTree = "<group>"; };
 		B33AC87125CB217E005B9C3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				B3E0854B25D5A1030004772C /* SignOutView.swift */,
 				B31F154925CD243E004A528B /* RecipesView.swift */,
 				B30B2B6225DC18F800CEE080 /* AddRecipesView.swift */,
+				B337B4B325DF043200595093 /* ImagePicker.swift */,
 				B3907AEB25D16013009C3A5E /* PostView.swift */,
 				B30B2B5D25DC10A600CEE080 /* PostArrayObject.swift */,
 				B30B2B5825DC0A8100CEE080 /* PostModel.swift */,
@@ -441,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B337B4B425DF043300595093 /* ImagePicker.swift in Sources */,
 				B3E0852725D5803A0004772C /* Home2View.swift in Sources */,
 				B30B2B5925DC0A8100CEE080 /* PostModel.swift in Sources */,
 				B31F154525CD2318004A528B /* HomeView.swift in Sources */,

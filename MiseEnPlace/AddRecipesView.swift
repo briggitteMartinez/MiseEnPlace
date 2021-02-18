@@ -10,6 +10,10 @@ import SwiftUI
 struct AddRecipesView: View {
     @State var title = ""
     @State var inputText = ""
+    @State var showImagePicker: Bool = false
+    @State var imageSelected: UIImage = UIImage(named:"miseenplacelogo")!
+    @State var sourceType: UIImagePickerController.SourceType = .camera
+    
     var body: some View {
         ScrollView {
             VStack{
@@ -20,17 +24,23 @@ struct AddRecipesView: View {
                 Image(systemName: "xmark.rectangle")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 350, height:300, alignment: .center)
+                    .frame(width: 350, height:300, alignment: .center).foregroundColor(.gray)
                 Divider()
                 HStack {
                     Spacer()
-                    Button(action: {print("take picture")}) {
+                    Button(action: {
+                        sourceType = UIImagePickerController.SourceType.camera
+                        showImagePicker.toggle()
+                    }) {
                         Image(systemName: "camera")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 50, height:50, alignment: .center)
                     }
-                    Button(action: { print("uppload photo")}) {
+                    Button(action: {
+                        sourceType = UIImagePickerController.SourceType.photoLibrary
+                        showImagePicker.toggle()
+                    }) {
                         Image(systemName: "photo")
                             .resizable()
                             .scaledToFit()
@@ -40,6 +50,9 @@ struct AddRecipesView: View {
                 TextEditor(text: $inputText).frame(width: 370, height: 900, alignment: .center).border(Color.gray, width: 2)
                 
             }.accentColor(.gray)
+            .sheet(isPresented: $showImagePicker, content: {
+                ImagePicker(imageSeleceted: $imageSelected, sourceType: $sourceType)
+            })
         }.navigationBarTitle("Add a recipe")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:
