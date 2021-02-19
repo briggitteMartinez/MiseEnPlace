@@ -11,6 +11,7 @@ struct AddRecipesView: View {
     @State var title = ""
     @State var inputText = ""
     @Binding var imageSelected: UIImage
+    @Environment(\.presentationMode) var presentationMode
     
     
     var body: some View {
@@ -37,12 +38,18 @@ struct AddRecipesView: View {
                 
             }.navigationBarTitle("Add a recipe")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing:
-                                    Button(action: {
-                                        postRecipe()
-                                    }) {
-                                        Text("Save")
-                                    }
+            .navigationBarItems(leading: Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "xmark")
+            },
+            
+            trailing:
+                Button(action: {
+                    postRecipe()
+                }) {
+                    Text("Save")
+                }
             )
             
         }
