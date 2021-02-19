@@ -10,9 +10,8 @@ import SwiftUI
 struct AddRecipesView: View {
     @State var title = ""
     @State var inputText = ""
-    @State var showImagePicker: Bool = false
-    @State var imageSelected: UIImage = UIImage(named:"miseenplacelogo")!
-    @State var sourceType: UIImagePickerController.SourceType = .camera
+    @Binding var imageSelected: UIImage
+    
     
     var body: some View {
         ScrollView {
@@ -21,65 +20,47 @@ struct AddRecipesView: View {
                 Divider()
                 TextField("Title of recipe here", text: $title).padding(.all, 6)
                 Divider()
-                Image(systemName: "xmark.rectangle")
+                Image(uiImage: imageSelected)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 350, height:300, alignment: .center).foregroundColor(.gray)
+                    .frame(width: 350, height:300, alignment: .center)
+                    .foregroundColor(.gray)
+                    .clipped()
                 Divider()
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        if UIImagePickerController.isSourceTypeAvailable(.camera){
-                            sourceType = UIImagePickerController.SourceType.camera
-                            showImagePicker.toggle()
-                        } else {
-                          print("Device has no camera, please choose picture from photo library")
-                            sourceType = UIImagePickerController.SourceType.photoLibrary
-                            showImagePicker.toggle()
-                        }
-                        
-                        
-                    }) {
-                        Image(systemName: "camera")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height:50, alignment: .center)
-                    }
-                    Button(action: {
-                        sourceType = UIImagePickerController.SourceType.photoLibrary
-                        showImagePicker.toggle()
-                    }) {
-                        Image(systemName: "photo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 50, height: 50, alignment: .leading)
-                    }
-                }.padding(6)
-                TextEditor(text: $inputText).frame(width: 370, height: 900, alignment: .center).border(Color.gray, width: 2)
+                TextEditor(text: $inputText)
+                    .frame(width: 360, height: 900, alignment: .center)
+                    .border(Color.gray, width: 4)
+                    .cornerRadius(20).padding(.top, 10)
                 
             }.accentColor(.gray)
-            .sheet(isPresented: $showImagePicker, content: {
-                ImagePicker(imageSeleceted: $imageSelected, sourceType: $sourceType)
-            })
+            
         }.navigationBarTitle("Add a recipe")
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:
                                 Button(action: {
-                                    print("Save button pressed...")
+                                    postRecipe()
                                 }) {
                                     Text("Save")
                                 }
         )
         
     }
+    
+    func postRecipe(){
+        print("post recipe to db")
+    }
 }
 
 struct AddRecipesView_Previews: PreviewProvider {
+    
+    @State static var image = UIImage(systemName: "xmark.rectangle")!
+    
     static var previews: some View {
         NavigationView{
-            AddRecipesView()
+            AddRecipesView(imageSelected: $image)
             
         }
         
     }
 }
+

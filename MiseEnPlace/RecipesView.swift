@@ -23,7 +23,7 @@ struct RecipesView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing:
                                 NavigationLink(
-                                    destination: AddRecipesView(),
+                                    destination: UploadView(),
                                     label: {
                                         Image(systemName: "plus")
                                     })

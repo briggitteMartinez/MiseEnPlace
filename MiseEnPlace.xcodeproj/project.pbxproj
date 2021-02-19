@@ -15,6 +15,8 @@
 		B31F154525CD2318004A528B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F154425CD2317004A528B /* HomeView.swift */; };
 		B31F154A25CD243E004A528B /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31F154925CD243E004A528B /* RecipesView.swift */; };
 		B337B4B425DF043300595093 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337B4B325DF043200595093 /* ImagePicker.swift */; };
+		B337B59B25DFB52B00595093 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B337B59A25DFB52B00595093 /* GoogleAppMeasurement.framework */; };
+		B337B5A525DFB7C700595093 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B337B5A425DFB7C700595093 /* UploadView.swift */; };
 		B33AC87025CB217E005B9C3F /* MiseEnPlaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33AC86F25CB217E005B9C3F /* MiseEnPlaceApp.swift */; };
 		B33AC87225CB217E005B9C3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33AC87125CB217E005B9C3F /* ContentView.swift */; };
 		B33AC87425CB2181005B9C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B33AC87325CB2181005B9C3F /* Assets.xcassets */; };
@@ -60,6 +62,9 @@
 		B31F154425CD2317004A528B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B31F154925CD243E004A528B /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
 		B337B4B325DF043200595093 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		B337B59425DFB4C700595093 /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B337B59A25DFB52B00595093 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Pods/GoogleAppMeasurement/Frameworks/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
+		B337B5A425DFB7C700595093 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		B33AC86C25CB217E005B9C3F /* MiseEnPlace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiseEnPlace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33AC86F25CB217E005B9C3F /* MiseEnPlaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiseEnPlaceApp.swift; sourceTree = "<group>"; };
 		B33AC87125CB217E005B9C3F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CFDAD07DA9F44A6B2955A32 /* Pods_MiseEnPlace.framework in Frameworks */,
+				B337B59B25DFB52B00595093 /* GoogleAppMeasurement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +133,8 @@
 		466CE65768FA5E5254CF29EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B337B59A25DFB52B00595093 /* GoogleAppMeasurement.framework */,
+				B337B59425DFB4C700595093 /* GoogleUtilities.framework */,
 				09388948EAE5FDB8914AD8B2 /* Pods_MiseEnPlace.framework */,
 				F5D893BF18CA505BD1BF0C4E /* Pods_MiseEnPlace_MiseEnPlaceUITests.framework */,
 				82ACAC99700B85830794D4D3 /* Pods_MiseEnPlaceTests.framework */,
@@ -166,6 +174,7 @@
 				B3907B0025D16EFF009C3A5E /* RoundedRectangleView.swift */,
 				B31F154425CD2317004A528B /* HomeView.swift */,
 				B3E0852625D5803A0004772C /* Home2View.swift */,
+				B337B5A425DFB7C700595093 /* UploadView.swift */,
 				B3E0854B25D5A1030004772C /* SignOutView.swift */,
 				B31F154925CD243E004A528B /* RecipesView.swift */,
 				B30B2B6225DC18F800CEE080 /* AddRecipesView.swift */,
@@ -455,6 +464,7 @@
 				B31F154A25CD243E004A528B /* RecipesView.swift in Sources */,
 				B3907AF125D16B31009C3A5E /* RegisterView.swift in Sources */,
 				B3907AEC25D16013009C3A5E /* PostView.swift in Sources */,
+				B337B5A525DFB7C700595093 /* UploadView.swift in Sources */,
 				B33AC87025CB217E005B9C3F /* MiseEnPlaceApp.swift in Sources */,
 				B3E0854C25D5A1030004772C /* SignOutView.swift in Sources */,
 			);
@@ -617,6 +627,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MiseEnPlace/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleAppMeasurement/Frameworks",
+				);
 				INFOPLIST_FILE = MiseEnPlace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -639,6 +653,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MiseEnPlace/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/GoogleAppMeasurement/Frameworks",
+				);
 				INFOPLIST_FILE = MiseEnPlace/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
