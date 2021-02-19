@@ -14,36 +14,38 @@ struct AddRecipesView: View {
     
     
     var body: some View {
-        ScrollView {
-            VStack{
-                Spacer()
-                Divider()
-                TextField("Title of recipe here", text: $title).padding(.all, 6)
-                Divider()
-                Image(uiImage: imageSelected)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 350, height:300, alignment: .center)
-                    .foregroundColor(.gray)
-                    .clipped()
-                Divider()
-                TextEditor(text: $inputText)
-                    .frame(width: 360, height: 900, alignment: .center)
-                    .border(Color.gray, width: 4)
-                    .cornerRadius(20).padding(.top, 10)
+        NavigationView {
+            ScrollView {
+                VStack{
+                    Spacer()
+                    Divider()
+                    TextField("Title of recipe here", text: $title).padding(.all, 6)
+                    Divider()
+                    Image(uiImage: imageSelected)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 350, height:300, alignment: .center)
+                        .foregroundColor(.gray)
+                        .clipped()
+                    Divider()
+                    TextEditor(text: $inputText)
+                        .frame(width: 360, height: 900, alignment: .center)
+                        .border(Color.gray, width: 4)
+                        .cornerRadius(20).padding(.top, 10)
+                    
+                }.accentColor(.gray)
                 
-            }.accentColor(.gray)
+            }.navigationBarTitle("Add a recipe")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarItems(trailing:
+                                    Button(action: {
+                                        postRecipe()
+                                    }) {
+                                        Text("Save")
+                                    }
+            )
             
-        }.navigationBarTitle("Add a recipe")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarItems(trailing:
-                                Button(action: {
-                                    postRecipe()
-                                }) {
-                                    Text("Save")
-                                }
-        )
-        
+        }
     }
     
     func postRecipe(){
