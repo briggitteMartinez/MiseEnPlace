@@ -13,6 +13,10 @@ struct AddRecipesView: View {
     @Binding var imageSelected: UIImage
     @Environment(\.presentationMode) var presentationMode
     
+    //alert
+    @State var showAlert : Bool = false
+    @State var postUploadedSuccessfully : Bool = false
+    
     
     var body: some View {
         NavigationView {
@@ -51,12 +55,30 @@ struct AddRecipesView: View {
                     Text("Save")
                 }
             )
+            .alert(isPresented: $showAlert) { () -> Alert in
+                getAlert()
+            }
             
+        }
+    }
+    
+    func getAlert() -> Alert {
+        
+        if postUploadedSuccessfully {
+            return Alert(title: Text("Successfully upploaded post!"), message: nil, dismissButton: .default(Text("OK"), action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }))
+        }else{
+            return Alert(title: Text("error uploading post"))
         }
     }
     
     func postRecipe(){
         print("post recipe to db")
+        Data.instance.uploadPost(image: imageSelected, title: title, recipeText: inputText, useriD: "Briggan") { (success) in
+            self.postUploadedSuccessfully = success
+            self.showAlert.toggle()
+        }
     }
 }
 

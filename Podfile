@@ -10,6 +10,7 @@ pod 'Firebase/Analytics'
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'FirebaseFirestoreSwift'
+pod 'Firebase/Storage'
 
   target 'MiseEnPlaceTests' do
     inherit! :search_paths
