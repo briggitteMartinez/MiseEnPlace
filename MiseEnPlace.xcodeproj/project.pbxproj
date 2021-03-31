@@ -28,9 +28,9 @@
 		B3907AEC25D16013009C3A5E /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3907AEB25D16013009C3A5E /* PostView.swift */; };
 		B3907AF125D16B31009C3A5E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3907AF025D16B31009C3A5E /* RegisterView.swift */; };
 		B3907B0125D16EFF009C3A5E /* RoundedRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3907B0025D16EFF009C3A5E /* RoundedRectangleView.swift */; };
+		B3C745A425E54C7000E5AF08 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B337B59A25DFB52B00595093 /* GoogleAppMeasurement.framework */; };
 		B3E0852725D5803A0004772C /* Home2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E0852625D5803A0004772C /* Home2View.swift */; };
 		B3E0854C25D5A1030004772C /* SignOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E0854B25D5A1030004772C /* SignOutView.swift */; };
-		B3F48EED25E41C970083FE12 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B337B59A25DFB52B00595093 /* GoogleAppMeasurement.framework */; };
 		D8633F548E9699CD25EDCE15 /* Pods_MiseEnPlace_MiseEnPlaceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D893BF18CA505BD1BF0C4E /* Pods_MiseEnPlace_MiseEnPlaceUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3F48EED25E41C970083FE12 /* GoogleAppMeasurement.framework in Frameworks */,
+				B3C745A425E54C7000E5AF08 /* GoogleAppMeasurement.framework in Frameworks */,
 				6CFDAD07DA9F44A6B2955A32 /* Pods_MiseEnPlace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

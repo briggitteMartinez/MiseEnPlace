@@ -19,16 +19,16 @@ struct SignOutView: View {
             
             Button(action: {
                 let firebaseAuth = Auth.auth()
-            do {
-              try firebaseAuth.signOut()
-              goToLogin.toggle()
-            } catch let signOutError as NSError {
-              print ("Error signing out: %@", signOutError)
-            }
+                do {
+                    try firebaseAuth.signOut()
+                    goToLogin.toggle()
+                } catch let signOutError as NSError {
+                    print ("Error signing out: %@", signOutError)
+                }
                 
             }) {
                 VStack {
-
+                    
                     Image(systemName: "square.and.arrow.up")
                         .resizable()
                         .scaledToFit()

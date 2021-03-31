@@ -65,7 +65,7 @@ struct AddRecipesView: View {
     func getAlert() -> Alert {
         
         if postUploadedSuccessfully {
-            return Alert(title: Text("Successfully upploaded post!"), message: nil, dismissButton: .default(Text("OK"), action: {
+            return Alert(title: Text("Successfully upploaded recipe!"), message: nil, dismissButton: .default(Text("OK"), action: {
                 self.presentationMode.wrappedValue.dismiss()
             }))
         }else{

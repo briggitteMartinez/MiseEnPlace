@@ -22,4 +22,23 @@ class PostArrayObject: ObservableObject{
         self.dataArray.append(post3)
         self.dataArray.append(post4)
     }
+    
+    //single post
+    init(post:PostModel){
+        self.dataArray.append(post)
+    }
+    
+    //for feed
+    init(shuffled: Bool) {
+        print("get posts for feed. shuffled \(shuffled)")
+        Data.instance.downloadPostsForFeed { (returnedPosts) in
+            if shuffled {
+                let shuffledPosts = returnedPosts.shuffled()
+                self.dataArray.append(contentsOf: shuffledPosts)
+            }else {
+                self.dataArray.append(contentsOf: returnedPosts)
+            }
+        }
+        
+    }
 }

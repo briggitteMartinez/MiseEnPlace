@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let recipePosts = PostArrayObject(shuffled: false)
+
 struct HomeView: View {
     var body: some View {
         TabView {
@@ -16,7 +18,7 @@ struct HomeView: View {
                     Text("Home")
                 }
             NavigationView{
-                RecipesView(posts: PostArrayObject())
+                RecipesView(posts: recipePosts)
             }
             .tabItem {
                 Image(systemName: "book.fill")

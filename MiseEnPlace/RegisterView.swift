@@ -35,28 +35,28 @@ struct RegisterView: View {
             .cornerRadius(10))
             .padding(10)
             
-//            RoundedRectangleView().overlay(HStack{
-//                Image(systemName: "lock")
-//                    .foregroundColor(.gray)
-//                SecureField("Confirm password", text: $rpassword2)
-//            }.frame(height: 60)
-//            .padding(.horizontal, 20)
-//            .cornerRadius(10))
-//            .padding(10)
+            //            RoundedRectangleView().overlay(HStack{
+            //                Image(systemName: "lock")
+            //                    .foregroundColor(.gray)
+            //                SecureField("Confirm password", text: $rpassword2)
+            //            }.frame(height: 60)
+            //            .padding(.horizontal, 20)
+            //            .cornerRadius(10))
+            //            .padding(10)
             
             Button(action: {
                 //if rpassword == rpassword2{
-                    Auth.auth().createUser(withEmail: remail, password: rpassword) { authResult, error in
-                        if let e = error{
-                            print(e.localizedDescription)
-                        }else{
-                            print("registered user")
-                            goToLogin.toggle()
-                            // code here to navigate to Homeview
-                        }
-                        
+                Auth.auth().createUser(withEmail: remail, password: rpassword) { authResult, error in
+                    if let e = error{
+                        print(e.localizedDescription)
+                    }else{
+                        print("registered user")
+                        goToLogin.toggle()
+                        // code here to navigate to Homeview
                     }
                     
+                }
+                
                 //}
             }) {
                 RoundedRectangle(cornerRadius: 20)

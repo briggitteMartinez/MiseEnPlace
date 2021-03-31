@@ -23,7 +23,7 @@ struct UploadView: View {
                     sourceType = UIImagePickerController.SourceType.camera
                     showImagePicker.toggle()
                 } else {
-                  print("Device has no camera, please choose picture from photo library")
+                    print("Device has no camera, please choose picture from photo library")
                     sourceType = UIImagePickerController.SourceType.photoLibrary
                     showImagePicker.toggle()
                 }
@@ -55,7 +55,7 @@ struct UploadView: View {
                 AddRecipesView(imageSelected: $imageSelected)
             })
         }
-            
+        
     }
     
     func segueToAddRecipesView() {
@@ -63,7 +63,7 @@ struct UploadView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             showAddRecipeView.toggle()
         }
-       
+        
     }
 }
 

@@ -23,7 +23,7 @@ class Data { // upload and download data to firebase
     
     
     func uploadPost(image: UIImage, title: String?, recipeText: String?,useriD: String, handler: @escaping(_ success: Bool)->()){
-     
+        
         //create new post document
         let document = R_POSTS.document()
         let postID = document.documentID
@@ -55,10 +55,45 @@ class Data { // upload and download data to firebase
                 }
                 
             }else{
-               print("error uploading imgage to firebase")
+                print("error uploading imgage to firebase")
                 handler(false)
                 return
             }
+        }
+        
+    }
+    
+    func downloadPostsForFeed(handler: @escaping (_ posts: [PostModel]) -> ()) {
+        R_POSTS.order(by: DatabasePostField.dateCreated, descending: true).limit(to: 50).getDocuments { (QuerySnapshot, error) in
+            handler(self.getPostFromSnapshot(querySnapshot: QuerySnapshot))
+        }
+    }
+    
+    func getPostFromSnapshot(querySnapshot: QuerySnapshot?) -> [PostModel]{
+        var postArray = [PostModel]()
+        if let snapshot = querySnapshot, snapshot.documents.count > 0 {
+            
+            for document in snapshot.documents{
+                
+                if
+                    let userID = document.get(DatabasePostField.userID) as? String,
+                    let timestamp = document.get(DatabasePostField.dateCreated) as? Timestamp {
+                    
+                    let title = document.get(DatabasePostField.title) as? String
+                    let recipeText = document.get(DatabasePostField.recipeText) as? String
+                    let postID = document.documentID
+                    let date = timestamp.dateValue()
+                    
+                    
+                    let newPost = PostModel(postID: postID, title: title!, dateCreated: date)
+                    postArray.append(newPost)
+                }
+            }
+            return postArray
+            
+        }else {
+            print("no documents in query found")
+            return postArray
         }
         
     }

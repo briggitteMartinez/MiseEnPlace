@@ -8,6 +8,8 @@
 import Foundation
 import FirebaseStorage
 
+let imageCache = NSCache<AnyObject, UIImage>()
+
 class ImageManager {
     
     static let instance = ImageManager()
@@ -26,8 +28,19 @@ class ImageManager {
             handler(success)
         }
         
-     
         
+        
+    }
+    
+    func downloadPostImage(postID: String, handler: @escaping(_ image: UIImage?)-> ()){
+        //get path where img is saved!
+        let path = getPostImagePath(postID: postID)
+        
+        //download img from path
+        downloadImage(path: path) { (returnedImage) in
+            handler(returnedImage)
+            
+        }
     }
     //PRIVATE FUNCTIONS
     
@@ -40,7 +53,7 @@ class ImageManager {
     
     
     private func uploadImage(path: StorageReference, image: UIImage, handler: @escaping (_ succes: Bool) -> ()){
-       
+        
         var compression: CGFloat = 1.0 // loops down by 0.05
         let maxFileSize: Int = 300 * 300 // max file size we want to save
         let maxCompression: CGFloat = 0.05 // max compression we alloud
@@ -86,5 +99,29 @@ class ImageManager {
             }
             
         }
+    }
+    
+    private func downloadImage(path: StorageReference, handler: @escaping (_ image: UIImage?) -> ()){
+        if let cachedImage = imageCache.object(forKey: path){
+            print("Image found in cache")
+            handler(cachedImage)
+            return
+        }else {
+            path.getData(maxSize: 27 * 1024 * 1024) { (returnedImageData, error) in
+                if let data = returnedImageData, let image = UIImage(data: data) {
+                    //succes getting img data
+                    imageCache.setObject(image, forKey: path)
+                    handler(image)
+                    return
+                }else {
+                    print("error getting data from path for image")
+                    handler(nil)
+                    return
+                }
+            }
+        }
+        
+        
+        
     }
 }
